@@ -16,8 +16,9 @@ public class NoodlesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(NoodlesServlet.class);
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	response.setHeader("content-type", "text/html;charset=UTF-8");
+    	request.setCharacterEncoding("UTF-8");
         PrintWriter writer = response.getWriter();
         String vegetable = request.getParameter("vegetable");
         if (vegetable == null) {
